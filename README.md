@@ -1,5 +1,7 @@
 # MailTM Client
 
+[<img alt="crates.io" src="https://img.shields.io/crates/v/mailtm-client" height="20" />](https://crates.io/crates/mailtm-client)
+
 An asynchronous and simple client for [Mail.tm](https://mail.tm/de/).
 
 ## Getting started
