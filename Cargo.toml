@@ -2,6 +2,14 @@
 name = "mailtm-client"
 version = "0.1.0"
 edition = "2021"
+authors = ["Max Beier"]
+description = "An asynchronous and simple client for Mail.tm."
+readme = "README.md"
+homepage = "https://maxbeier.dev"
+repository = "https://github.com/Max-Beier/mailtm-client-rs"
+license = "MIT"
+license-file = "LICENSE"
+keywords = ["mail"]
 
 [dependencies]
 reqwest = { version = "0.12.5", features = ["json"] }
