@@ -4,7 +4,7 @@ An asynchronous and simple client for [Mail.tm](https://mail.tm/de/).
 
 ## Getting started
 
-```
+```rs
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
     let account_credentials =
