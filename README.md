@@ -9,7 +9,7 @@ An asynchronous and simple client for [Mail.tm](https://mail.tm/de/).
 
 ```rust
 #[tokio::main]
-async fn main() -> Result<(), Box<dyn Error>> {
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let account_credentials =
         mailtm_client::AccountCredentials::new("User123", "my_secret_password");
 
@@ -21,6 +21,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
             mail = html;
             break;
         }
+        tokio::time::sleep(std::time::Duration::from_secs(1)).await;
     }
 
     Ok(())

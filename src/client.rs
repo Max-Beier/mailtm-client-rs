@@ -1,8 +1,7 @@
-use std::{error::Error, time::Duration};
+use std::error::Error;
 
 use scraper::Html;
 use serde_json::{json, Value};
-use tokio::time::sleep;
 
 use crate::AccountCredentials;
 
@@ -63,7 +62,6 @@ impl Client {
     }
 
     pub async fn request_latest_message_html(&self) -> Result<Option<Html>, Box<dyn Error>> {
-        sleep(Duration::from_secs(1)).await;
         let response = self
             .client
             .get("https://api.mail.tm/messages")
