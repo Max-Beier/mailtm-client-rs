@@ -19,16 +19,7 @@ impl Client {
     pub async fn new(account_credentials: &AccountCredentials) -> Result<Self, Box<dyn Error>> {
         let client = reqwest::Client::new();
 
-        let domains: Vec<String> = reqwest::get("https://api.mail.tm/domains")
-            .await?
-            .json::<Value>()
-            .await?["hydra:member"]
-            .as_array()
-            .unwrap()
-            .iter()
-            .map(|v| v["domain"].as_str().unwrap().to_string())
-            .collect();
-
+        let domains = Self::get_domains().await?;
         let domain = &domains[0];
         let address = format!("{}@{}", account_credentials.username, domain);
 
@@ -148,5 +139,17 @@ impl Client {
             .await?;
 
         Ok(())
+    }
+
+    pub async fn get_domains() -> Result<Vec<String>, Box<dyn Error>> {
+        Ok(reqwest::get("https://api.mail.tm/domains")
+            .await?
+            .json::<Value>()
+            .await?["hydra:member"]
+            .as_array()
+            .unwrap()
+            .iter()
+            .map(|v| v["domain"].as_str().unwrap().to_string())
+            .collect())
     }
 }
