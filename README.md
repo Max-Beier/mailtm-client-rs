@@ -1,6 +1,7 @@
 # MailTM Client
 
 [<img alt="crates.io" src="https://img.shields.io/crates/v/mailtm-client" height="20" />](https://crates.io/crates/mailtm-client)
+[<img alt="crates.io" src="https://img.shields.io/crates/d/mailtm-client" height="20" />](https://crates.io/crates/mailtm-client)
 [<img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/Max-Beier/mailtm-client-rs/rust.yml" height="20" />](https://github.com/Max-Beier/mailtm-client-rs/actions)
 
 An asynchronous and simple client for [Mail.tm](https://mail.tm/de/).
